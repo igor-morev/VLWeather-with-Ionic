@@ -1,0 +1,16 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{data.name}}">
+  <ion-content class="padding">
+      <ion-refresher pulling-text="Тянем-потянем" on-refresh="refresh()"></ion-refresher>
+      <h2>Город: {{data.name}}</h2>
+      <p>Страна: {{data.sys.country}}</p>
+      <p>Широта: {{data.coord.lon}}</p>
+      <p>Долгота: {{data.coord.lat}}</p>
+      <p>Погода: {{data.weather[0].main}}</p>
+  </ion-content>
+</ion-view>
